@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body>div{
+            height: 400px;
+            width: 400px;
+            align-items: center;
+            padding-left: 40px;
+            border-radius: 5px;
+            position: absolute;
+            display: flex;
+            margin: auto;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        
+        button{
+            margin: 10px;
+            padding: 5px;
+        }
+
+        button{
+            width: 300px;
+            height: 100px;
+            border-radius: 10px;
+            font-family: Arial;
+            font-size: 20px;
+            padding: 10px 20px 10px 20px;
+            background-color: lime;
+            margin-top: 30px;
+            margin-left: 10px;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+            <button>Try it now</button>
+    </div>
+    
+
+    <script>
+        document.querySelector("button").addEventListener("click",function(){
+
+            document.querySelector("button").style.backgroundColor="blue"
+
+        });
+    </script>
+</body>
+</html>

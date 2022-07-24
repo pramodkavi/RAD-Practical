@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body>div{
+            height: 400px;
+            width: 400px;
+            background: linear-gradient(40deg,#c193c5,#7bc6cc);
+            box-shadow: 10px 10px 74px 10px #6dd5fa;
+            align-items: center;
+            padding-left: 40px;
+            border-radius: 5px;
+            position: absolute;
+            margin: auto;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        
+        label{
+            display: block;
+            margin: 10px;
+        }
+        button{
+            margin: 10px;
+            padding: 5px;
+        }
+        input {
+            padding: 5px;
+            font-size: 25px;
+            border-width: 1px;
+            border-color: #ede8e8;
+            border-radius: 15px !important;
+            background-color: #FFFFFF;
+            color: #807c7c;
+            border-style: double;
+            border-radius: 0px;
+            box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+            text-shadow: 3px 0px 4px rgba(209,197,197,.75);
+        }
+        input:focus {
+            outline:none;
+        }
+        button{
+            border-radius: 10px;
+            font-family: Arial;
+            color: #3a3939;
+            font-size: 20px;
+            padding: 10px 20px 10px 20px;
+            background-color: #7bc6cc;
+            margin-top: 30px;
+            margin-left: 10px;
+        }
+        h3{
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        li{
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h3>Available Hotel packages</h1>
+        <ul >
+            <li><input type="Checkbox" id="1" onclick="status(this)">Wedding Package</li>
+            <li><input type="Checkbox" id="2" onclick="status(this)">Birthday Package</li>
+            <li><input type="Checkbox" id="3" onclick="status(this)">Normal Function Package</li>
+            <li><input type="Checkbox" id="4" onclick="status(this)">Day out Package</li>
+        </ul>
+        <input id="sub" type="submit" value="Submit">
+    
+    </div>
+    
+
+    <script>
+        
+    function status(cb){
+        if(cb.checked){
+            for (let i=1;i<5;i++){
+                if (i!=cb.id){
+                    document.getElementById(`${i}`).disabled=true;
+                }
+            }
+            document.getElementById(cb.id).disabled=false;
+        }else{
+            for (let i=1;i<5;i++){
+                    document.getElementById(`${i}`).disabled=false;
+            }
+        }
+
+    }
+
+    </script>
+</body>
+</html>

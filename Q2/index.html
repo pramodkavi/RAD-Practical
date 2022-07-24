@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body>div{
+            height: 400px;
+            width: 400px;
+            background: linear-gradient(40deg,#c193c5,#7bc6cc);
+            box-shadow: 10px 10px 74px 10px #6dd5fa;
+            align-items: center;
+            padding-left: 40px;
+            border-radius: 5px;
+            position: absolute;
+            display: flex;
+            margin: auto;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        
+        label{
+            margin: 10px;
+        }
+        .remainTime{
+            height: 50px;
+            width: 300px;
+            display: block;
+            border-radius: 10px;
+            font-family: Arial;
+            color: #3a3939;
+            font-size: 20px;
+            padding: 10px 20px 10px 20px;
+            background-color: #8fe8ee;
+            margin-top: 30px;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <form action="">
+            <label class="currentTime" for=""></label>
+
+            <label class="remainTime"></label>
+        </form>
+    </div>
+    
+
+    <script>
+        var time= new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'});
+        var hours=parseInt(time.split(':')[0]);
+        var status=time.split(' ')[1];
+        
+        var crntTime="Now the time is "+time;
+
+        document.querySelector(".currentTime").textContent=crntTime;
+
+        var calTime="";
+
+        if(status == "AM"){
+            calTime= "Remains "+(24-hours)+" hours more..."
+        }else{
+            calTime= "Remains "+(12-hours)+" hours more..."
+        }
+        document.querySelector(".remainTime").textContent = calTime;
+
+    </script>
+</body>
+</html>
